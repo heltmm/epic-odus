@@ -8,7 +8,8 @@ class SectionsController < ApplicationController
   end
 
   def new
-    @section = Section.new
+    @chapter = Chapter.find(params[:chapter_id])
+    @section = @chapter.sections.new
   end
 
   def create
