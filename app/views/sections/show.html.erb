@@ -6,16 +6,17 @@
   <ul>
     <% @section.lessons.each do |lesson| %>
       <li>
-        <%= link_to lesson.title, section_lesson_path(lesson) %>
+        <%= link_to lesson.title, section_lesson_path(@section) %>
       </li>
 
     <% end %>
   </ul>
 <% else %>
-  <p>There are no sightings yet!</p>
+  <p>There are no sections yet!</p>
 <% end %>
 
-<p><%= link_to "Edit Section", edit_chapter_section_path(@section) %></p>
+<p><%= link_to "New Lesson", new_section_lesson_path(@section) %>
+<p><%= link_to "Edit Section", edit_section_path(@section) %></p>
 <p><%= link_to "Delete", section_path(@section),
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>

@@ -24,7 +24,6 @@ class SectionsController < ApplicationController
 
   def edit
     @section = Section.find(params[:id])
-    @chapter = Chapter.find(params[:chapter_id])
   end
 
   def update
@@ -39,7 +38,7 @@ class SectionsController < ApplicationController
 
   def destroy
     @section = Section.find(params[:id])
-    @chapter = Chapter.find(params[:chapter_id])
+    @chapter = @section.chapter
     @section.destroy
     redirect_to chapter_path(@chapter)
   end
