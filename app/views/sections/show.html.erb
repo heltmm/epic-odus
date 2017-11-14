@@ -1,0 +1,16 @@
+<h1><%=@section.title%></h1>
+
+<% if @section.lessons.any? %>
+  <h4>Here are the lessons for this section:</h4>
+
+  <ul>
+    <% @section.lessons.each do |lesson| %>
+      <li>
+        <%= link_to lesson.title, section_lesson_path(lesson) %>
+      </li>
+
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no sightings yet!</p>
+<% end %>
