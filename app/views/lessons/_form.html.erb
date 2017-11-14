@@ -1,0 +1,13 @@
+<%= render "layouts/errors", :object => @lesson %>
+
+<%= form_for @lesson do |f| %>
+  <%= f.label :order %>
+  <%= f.text_field :order %>
+  <%= f.label :day %>
+  <%= f.text_field :day %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :text %>
+  <%= f.text_field :text %>
+  <%= f.submit %>
+<% end %>
