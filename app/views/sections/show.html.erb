@@ -6,7 +6,7 @@
   <ul>
     <% @section.lessons.each do |lesson| %>
       <li>
-        <%= link_to lesson.title, section_lesson_path(@section) %>
+        <%= link_to lesson.title, section_lesson_path(@section, lesson) %>
       </li>
 
     <% end %>

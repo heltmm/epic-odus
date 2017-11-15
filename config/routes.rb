@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  root :to => 'chapters#index'
+
   resources :chapters do
-    resources :sections
+    resources :sections, :except => [:index]
   end
 
-  resources :sections do
+  resources :sections, :except => [:index] do
     resources :lessons
   end
 end
